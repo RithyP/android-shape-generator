@@ -4,18 +4,12 @@ import android.graphics.Color
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import androidx.core.view.WindowCompat
+import com.rithyphavan.shapegenerator.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        setStatusBarTransparent()
-    }
+class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
-    private fun setStatusBarTransparent() {
-        WindowCompat.setDecorFitsSystemWindows(window, false)
-    }
 }
