@@ -7,6 +7,10 @@ android {
     namespace = "com.rithyphavan.shapegenerator"
     compileSdk = 33
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "com.rithyphavan.shapegenerator"
         minSdk = 26
