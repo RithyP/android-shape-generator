@@ -1,6 +1,6 @@
 package com.rithyphavan.shapegenerator.ui.component.shape
 
-class Circle(size: Double):Shape() {
+class Circle(size: Double) : Shape() {
     var size: Double = size
         private set
 

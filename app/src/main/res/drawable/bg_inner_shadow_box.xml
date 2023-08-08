@@ -4,7 +4,7 @@
     <item>
         <shape android:shape="rectangle">
             <solid android:color="@color/white" />
-            <corners android:radius="24dp" />
+            <corners android:radius="16dp" />
         </shape>
     </item>
     <!--  left shadow -->
@@ -13,10 +13,10 @@
             <gradient
                 android:angle="180"
                 android:centerColor="#00FF0000"
-                android:centerX="0.9"
+                android:centerX="0.92"
                 android:endColor="#5C000000"
                 android:startColor="#00FF0000" />
-            <corners android:radius="24dp" />
+            <corners android:radius="16dp" />
         </shape>
     </item>
     <!--  right shadow -->
@@ -25,10 +25,10 @@
             <gradient
                 android:angle="360"
                 android:centerColor="#00FF0000"
-                android:centerX="0.92"
+                android:centerX="0.96"
                 android:endColor="#5C000000"
                 android:startColor="#00FF0000" />
-            <corners android:radius="24dp" />
+            <corners android:radius="16dp" />
         </shape>
     </item>
     <!--  top shadow -->
@@ -37,10 +37,10 @@
             <gradient
                 android:angle="270"
                 android:centerColor="#00FF0000"
-                android:centerY="0.13"
+                android:centerY="0.08"
                 android:endColor="#00FF0000"
                 android:startColor="#6B000000" />
-            <corners android:radius="24dp" />
+            <corners android:radius="16dp" />
         </shape>
     </item>
     <!--  bottom shadow -->
@@ -52,7 +52,7 @@
                 android:centerY="0.02"
                 android:endColor="#00FF0000"
                 android:startColor="#6B000000" />
-            <corners android:radius="24dp" />
+            <corners android:radius="16dp" />
         </shape>
     </item>
 </layer-list>

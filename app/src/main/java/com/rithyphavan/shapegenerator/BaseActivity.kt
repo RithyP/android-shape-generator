@@ -37,16 +37,16 @@ abstract class BaseActivity<VB : ViewBinding>(
     /**
      * Use for controlling view property or attribute.
      */
-    open class initView()
+    open fun initView() {}
 
     /**
      * Use this for populating actionable view like on button clicked, on text changed, etc...
      */
-    open class initAction()
+    open fun initAction() {}
 
     /**
      * Use this function only for state observing like listening to LiveData or Coroutine Flow.
      */
-    open class initObserver()
+    open fun initObserver() {}
 
 }
