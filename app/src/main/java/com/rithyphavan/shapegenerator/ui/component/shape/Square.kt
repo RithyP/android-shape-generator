@@ -2,25 +2,28 @@ package com.rithyphavan.shapegenerator.ui.component.shape
 
 import android.graphics.Bitmap
 import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
 import android.graphics.Rect
-import android.opengl.ETC1.getHeight
-import android.opengl.ETC1.getWidth
 
 
-class Square(size: Int) : Shape() {
-    var size: Int = size
-        private set
+class Square(private var size: Float = 100f) : Shape() {
 
-    override fun draw() {
-        val squareBitmap = Bitmap.createBitmap(size, size, Bitmap.Config.ARGB_8888)
+    override fun getSize(): Float {
+        return size
+    }
+
+    override fun setSize(size: Float) {
+        this.size = size
+    }
+
+    override fun draw(): Bitmap {
+        val squareBitmap =
+            Bitmap.createBitmap(getSize().toInt(), getSize().toInt(), Bitmap.Config.ARGB_8888)
         val canvas = Canvas(squareBitmap)
 
-        val paint = Paint()
-        paint.color = Color.RED
-        val rect = Rect(0, 0, size, size)
+        val paint = getShapePaint()
+        val rect = Rect(0, 0, getSize().toInt(), getSize().toInt())
 
         canvas.drawRect(rect, paint)
+        return squareBitmap
     }
 }
