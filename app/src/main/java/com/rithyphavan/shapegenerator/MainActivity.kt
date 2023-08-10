@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import com.rithyphavan.shapegenerator.databinding.ActivityMainBinding
 import com.rithyphavan.shapegenerator.ui.component.shape.Rectangle
 import com.rithyphavan.shapegenerator.util.ColorUtil.genRandomPaintColor
+import com.rithyphavan.shapegenerator.util.PixelUtil.dpToPx
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
 
@@ -24,13 +25,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
 
     private fun drawShapeOnBitmap() {
         val shapeBitmap = Bitmap.createBitmap(
-            binding.shapeCanvasCard.width, binding.shapeCanvasCard.height, Bitmap.Config.ARGB_8888
+            binding.shapeCanvasCard.width - dpToPx(16),
+            binding.shapeCanvasCard.height - dpToPx(16),
+            Bitmap.Config.ARGB_8888
         )
         val canvas = Canvas(shapeBitmap)
         var shapeRect: Rect? = null
         for (shape in viewModel.shapes) {
             if (shape is Rectangle) {
-                shape
+                shape.setWidth(100f)
+                shape.setLength(200f)
             } else {
                 shape.setSize(200f)
             }
