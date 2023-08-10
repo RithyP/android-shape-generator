@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import com.rithyphavan.shapegenerator.databinding.ActivityMainBinding
 import com.rithyphavan.shapegenerator.ui.component.shape.Rectangle
 import com.rithyphavan.shapegenerator.util.ColorUtil.genRandomPaintColor
+import com.rithyphavan.shapegenerator.util.ColorUtil.getRandomGradientColor
 import com.rithyphavan.shapegenerator.util.PixelUtil.dpToPx
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
@@ -39,6 +40,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 shape.setSize(200f)
             }
             shape.setShapePaint(genRandomPaintColor())
+
+            //  shape.setShapePaint(getRandomGradientColor(shape.getSize())) // For gradient paint
             val bitmap = shape.draw()
             shapeRect = Rect(
                 shapeRect?.right ?: 0, 0, bitmap.width + (shapeRect?.right ?: 0), bitmap.height
